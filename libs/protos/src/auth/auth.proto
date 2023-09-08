@@ -1,0 +1,19 @@
+syntax = "proto3";
+import "google/protobuf/field_mask.proto";
+
+package auth;
+
+service AuthService {
+  rpc GetUserById(GetUserByIdData) returns (User) {}
+}
+
+message GetUserByIdData {
+    string id = 1;
+}
+
+message User {
+  string id = 1;
+  string email = 3;
+  string firstName = 4;
+  string lastName = 5;
+}
